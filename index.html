@@ -5,7 +5,6 @@
         
         </title>
         <script type="text/javascript" src="OpenLayers.js"></script>
-        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
         <script type="text/javascript">
             var map;
             var vecOverlay;
@@ -86,7 +85,7 @@
                  */
 
                 function on_select_feature(event){
-                    var info_div = document.getElementById('photo_info_wrapper');
+                    var info_div = document.getElementById('photo_wrapper');
                     info_div.innerHTML = "";
                     var cluster = event.feature.cluster;
 
@@ -104,7 +103,7 @@
                  * on unselect feature listener
                  */
                 function on_unselect_feature(event){
-                    var info_div = document.getElementById('photo_info_wrapper');
+                    var info_div = document.getElementById('photo_wrapper');
                     info_div.innerHTML='';
                 }
 
@@ -131,7 +130,7 @@
     </head>
     <body onload='init();'>
       <div id="map" style='width: 600px; height:600px;'></div>
-      <div id='photo_info_wrapper'></div>
+      <div id='photo_wrapper'></div>
     </body>
   
 </html>
