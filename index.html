@@ -8,17 +8,17 @@
         <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
         <script type="text/javascript">
             var map;
-            var vector_layer;
+            var vecOverlay;
 
             function init(){
                 map = new OpenLayers.Map('map');
-                //var google_map = new OpenLayers.Layer.Google('Google map',{});
                 var osm = new OpenLayers.Layer.OSM();
                 map.addLayer(osm);
 
 
-                // Vector Layer 
-                vector_layer = new OpenLayers.Layer.Vector('Flickr Data',{
+                // Vector layer on top of the map
+                // this basically constitures the symboles
+                vecOverlay = new OpenLayers.Layer.Vector('Flickr Data',{
                     projection: new OpenLayers.Projection('EPSG:4326'),
                     protocol: new OpenLayers.Protocol.HTTP({
                         url: 'flickr_data.kml',
@@ -31,7 +31,7 @@
                         new OpenLayers.Strategy.Cluster()]
                 });
 
-                map.addLayer(vector_layer);
+                map.addLayer(vecOverlay);
 
                 
                 /**
@@ -73,10 +73,10 @@
                         'select': vector_style_select
                         });
 
-                vector_layer.styleMap = vector_style_map;  // adding the style map to vector layer
+                vecOverlay.styleMap = vector_style_map;  // adding the style map to vector layer
 
                 var select_feature_control = new OpenLayers.Control.SelectFeature(
-                        vector_layer, {hover: true}
+                        vecOverlay, {hover: true}
                         );
                 map.addControl(select_feature_control);
                 select_feature_control.activate();
@@ -108,13 +108,13 @@
                     info_div.innerHTML='';
                 }
 
-                vector_layer.events.register('featureselected', this, on_select_feature);
-                vector_layer.events.register('featureunselected', this, on_unselect_feature);
+                vecOverlay.events.register('featureselected', this, on_select_feature);
+                vecOverlay.events.register('featureunselected', this, on_unselect_feature);
 
                 map.setCenter(new OpenLayers.LonLat(9.14,48.7)
                     .transform(
-                        new OpenLayers.Projection("EPSG:4326"),  // wgs 1984
-                        new OpenLayers.Projection("EPSG:900913")            // spherical mercator proj
+                        new OpenLayers.Projection("EPSG:4326"),     // wgs 1984
+                        new OpenLayers.Projection("EPSG:900913")    // spherical mercator proj
                         ), 3 // zoom level
                     );
                 
