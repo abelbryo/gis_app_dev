@@ -1,0 +1,131 @@
+html{
+	margin: 0;
+	padding: 0;
+	background:white;
+}
+body{
+	font-family: Arial, Helvetica, Verdana, Sans-serif;
+	font-size: 12px;
+	color:#666666;
+	margin: 0;
+	padding: 0;
+	background-image:url('../images/background.png');
+	background-repeat:repeat;
+	height:100%;
+	
+}
+.hidden{
+	display:none;
+}
+h1{
+	margin:0;
+	padding:20px 0 0 20px;
+}
+
+
+
+#page-container{
+
+	width: 760px;
+	margin: auto;
+	background:white;
+}
+
+#main-nav{
+
+	height: 50px;
+}
+/* IE5 Mac Hack \*/ 
+#main-nav { padding-left: 11px; } 
+/*/ 
+#main-nav { padding-left: 11px; overflow: hidden; } 
+/* End Hack */
+#main-nav dl{
+	margin:0;
+	padding:0;
+
+}
+#main-nav dt{
+	float:left;
+	padding: 10px 10px 10px 10px;
+}
+#main-nav dt a{
+
+	height:0px !important;
+	padding: 50px 0 0 0;
+	
+	background-repeat : no-repeat;
+}
+
+#header{
+
+	height:150px;
+	background-image: url('../images/header.gif');
+	
+}
+/*
+#sidebar-a{
+	
+	float:right;
+	width:280px;
+	line-height: 18px;
+	
+}
+#sidebar-a .padding{
+	padding:25px;
+}
+*/
+#content{
+	margin-right: 280px;
+	line-height:18px;
+	padding:9px;
+	
+}
+
+#map{
+	position:relative;
+	border: 1px solid green ;
+	width: 740px; 
+	height:500px;
+	padding-left:10px;
+	
+}
+
+
+#photo_wrapper{
+	padding:25px;
+}
+#content h2{
+	margin:0;
+	padding:0;
+	padding-bottom: 15px;
+}
+#content p{
+	margin:0;
+	padding:0;
+	padding-bottom: 15px;
+}
+
+#footer{
+	clear:both;
+	height:66px;
+	font-family: Tahoma, Arial, Helvetica, Sans-serif;
+	font-size: 10px;
+	color:#c9c9c9;
+	border-top:1px solid #efefef;
+	padding: 13px 25px;
+	line-height: 18px;
+}
+#footer a {
+	color:#c9c9c9;
+	text-decoration: none;
+}
+#footer a:hover {
+	color: #db6d16;
+}
+#footer #altnav{
+	width:350px;
+	float:right;
+	text-align:right;
+}
+
