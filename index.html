@@ -87,8 +87,13 @@
                  */
 
                 function on_select_feature(event){
+<<<<<<< HEAD
                     var photo_div = document.getElementById('photo_wrapper');
                     photo_div.innerHTML = "";
+=======
+                    var info_div = document.getElementById('photo_wrapper');
+                    info_div.innerHTML = "";
+>>>>>>> 17f7dffe75b2d84122dfb0af6b0fda4b51c951ea
                     var cluster = event.feature.cluster;
 
                     for(var i = 0; i < cluster.length; i++){
@@ -105,18 +110,31 @@
                  * on unselect feature listener
                  */
                 function on_unselect_feature(event){
+<<<<<<< HEAD
                     var photo_div = document.getElementById('photo_wrapper');
                     photo_div.innerHTML='';
                 }
 
                 vecOverlay.events.register('featureselected', this, on_select_feature);
                 //vecOverlay.events.register('featureunselected', this, on_unselect_feature);
+=======
+                    var info_div = document.getElementById('photo_wrapper');
+                    info_div.innerHTML='';
+                }
+
+                vecOverlay.events.register('featureselected', this, on_select_feature);
+                vecOverlay.events.register('featureunselected', this, on_unselect_feature);
+>>>>>>> 17f7dffe75b2d84122dfb0af6b0fda4b51c951ea
 
                 map.setCenter(new OpenLayers.LonLat(9.14,48.7)
                     .transform(
                         new OpenLayers.Projection("EPSG:4326"),     // wgs 1984
                         new OpenLayers.Projection("EPSG:900913")    // spherical mercator proj
+<<<<<<< HEAD
                         ), 4 // zoom level
+=======
+                        ), 3 // zoom level
+>>>>>>> 17f7dffe75b2d84122dfb0af6b0fda4b51c951ea
                     );
                 
 
@@ -129,6 +147,7 @@
     </head>
    
     <body onload='init();'>
+<<<<<<< HEAD
         
         <div id="page-container">
             
@@ -159,5 +178,9 @@
                 Copyright (c) International Group. Powered by OpenLayers.
             </div>
         </div>
+=======
+      <div id="map" style='width: 600px; height:600px;'></div>
+      <div id='photo_wrapper'></div>
+>>>>>>> 17f7dffe75b2d84122dfb0af6b0fda4b51c951ea
     </body>
 </html>
